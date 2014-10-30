@@ -1,0 +1,440 @@
+# $Id: isis-uninett.net,v 1.439 2014/09/24 08:39:35 trond Exp $
+*NETWORK Uninett
+*Vertices 105
+# 1  "oslo-gw"             145.0     60.0      area "Oslo"
+2  "gjovik-gw1"          115.0     87.0      area "Lillehammer/Gjovik"
+3  "stolav-gw2"          145.0     22.0      area "Oslo"
+4  "trd-gw1"             126.0    115.0      area "Trondheim"
+5  "hovedbygget-gw"       75.0    118.0      area "Trondheim"
+6  "trd-gw2"             155.0    115.0      area "Trondheim"
+7  "haugesund-gw2"	  16.0     30.0      area "Haugesund"
+# 8
+9  "ma2-gw"	         120.0    195.0      area "Tromso"
+10 "tromso-gw2"           80.0    195.0      area "Tromso"
+11 "molde-gw"              5.0    115.0      area "Molde"
+12 "ifi2-gw2"         	 173.0	   55.0      area "Oslo"
+13 "bergen-gw2"           35.0     90.0      area "Bergen"
+14 "harstad-gw1"	  63.0    186.0	     area "Harstad"
+15 "grimstad-gw2"         60.0     23.0      area "Kristiansand"
+16 "bergen-gw7"           35.0     65.0      area "Bergen"
+17 "hoytek-gw4"            5.0     65.0      area "Bergen"
+18 "hoytek-gw3"           20.0     77.0      area "Bergen"
+19 "alesund-gw1"          20.0    106.0      area "Alesund"
+20 "volda-gw1"            56.0    104.0      area "Volda"
+21 "forde-gw"             70.0     94.0      area "Forde/Volda"
+22 "sogndal-gw"           60.0     80.0      area "Forde/Volda"
+23 "hovedbygget-gw4"      97.0    116.0      area "Trondheim"
+24 "trd-gw7"             126.0    119.0      area "Trondheim"
+25 "trd-gw"              165.0    125.0      area "Trondheim"
+26 "stjordal-gw"         106.0    143.0      area "Trondheim"
+27 "levanger-gw"          85.0    150.0      area "Trondheim"
+28 "steinkjer-gw"         63.0    157.0      area "Trondheim"
+29 "kristiansand-gw2"     40.0     10.0      area "Kristiansand"
+30 "namsos-gw2"           50.0    158.0      area "Trondheim"
+31 "lillehammer-gw2"     120.0    100.0      area "Lillehammer/Gjovik"
+32 "fredrikstad-gw2"     160.0     16.0      area "Ostfold"
+33 "evenstad-gw"         170.0    105.0      area "Osterdalen"
+34 "rena-gw"             170.0     92.0      area "Osterdalen"
+35 "pil32-gw"		 159.0	   22.0	     area "Oslo"
+36 "sogndal-gw2"          50.0     77.0      area "Forde/Volda"
+37 "lillehammer-gw"      110.0     95.0      area "Lillehammer/Gjovik"
+38 "gjovik-gw"           105.0     87.0      area "Lillehammer/Gjovik"
+39 "as-gw"               185.0     42.0      area "NLH As"
+40 "hoytek-gw2"            5.0     90.0      area "Bergen"
+41 "elverum-gw2"         165.0	   83.0      area "Osterdalen"
+42 "pil50-gw"		 160.0	   26.0	     area "Oslo"
+43 "borre-gw1"           125.0     16.0      area "Buskerud og Vestfold"
+44 "kristiansand-gw1"	  50.0	   10.0	     area "Kristiansand"
+45 "kongsberg-gw"        107.0     30.0      area "Buskerud og Vestfold"
+46 "honefoss-gw"          95.0     42.0      area "Buskerud og Vestfold"
+47 "kjeller-gw3"          93.0     63.0      area "Kjeller"
+#48
+49 "porsgrunn-gw3"        70.0     35.0      area "Telemark"
+50 "alesund-gw"            5.0    106.0      area "Alesund"
+51 "haugesund-gw"          5.0     30.0      area "Stord/Haugesund"
+52 "volda-gw3"            62.0     99.0      area "Volda"
+53 "larvik-gw"	 	 100.0	   20.0	     area "Buskerud og Vestfold"
+54 "tromso-gw4"           90.0    190.0      area "Tromso"
+55 "tromso-gw7"          110.0    190.0      area "Tromso"
+56 "drammen-gw1"         122.0     24.0      area "Buskerud og Vestfold"
+57 "fredrikstad-gw3"     173.0     16.0      area "Ostfold"
+58 "grimstad-gw1"         50.0     20.0      area "kristiansand"
+59 "harstad-gw3"          80.0    180.0      area "Harstad"
+60 "svalbard-gw"           5.0    195.0      area "Harstad"
+61 "stord-gw"              5.0     43.0      area "Stord/Haugesund"
+62 "mo-gw3"               15.0    162.0      area "Mo"      
+63 "mo-gw4"               15.0    166.0      area "Mo"
+64 "porsgrunn-gw2"        60.0     30.0      area "Telemark"
+65 "nesna-gw2"             1.0    150.0      area "Nesna"
+66 "stolav-gw4"          151.0     31.0      area "Oslo"
+67 "oslo-gw4"            156.0     45.0      area "Oslo"
+68 "oslo-gw7"            165.0     45.0      area "Oslo"
+# 69 "volda-gw2"            70.0    104.0      area "Volda"
+70 "bodo-gw"		  30.0	  170.0	     area "Bodo"
+71 "molde-gw2"             5.0    119.0      area "Molde"
+72 "kristiansund-gw2"     20.0    120.0      area "Kristiansund"
+73 "teknobyen-gw2"       119.0    110.0      area "Trondheim"
+74 "bodo-gw2"             43.0    168.0      area "Bodo"
+75 "harstad-gw2"          67.0    179.0      area "Harstad"
+76 "sandnessjoen-gw"       1.0    135.0      area "Sandnessjoen"
+77 "kongsvinger-gw"      160.0     73.0      area "Osterdalen" 
+78 "teknobyen-gw1"	 125.0    105.0      area "Trondheim"
+79 "kjeller-gw2"         105.0     63.0      area "Kjeller"
+80 "stavanger-gw1"        34.0     27.0      area "Stavanger"
+81 "haukeland-gw"         25.0     60.0      area "Bergen"
+82 "haukeland-gw2"        15.0     60.0      area "Bergen"
+83 "narvik-gw3"          185.0    170.0      area "Narvik"
+84 "bodo-gw1"		  39.0    163.0      area "Bodo"
+# 85 "halden-gw2"          200.0     13.0      area "Ostfold"
+86 "halden-gw"           190.0     13.0      area "Ostfold"
+87 "halden-gw3"		 190.0	   17.0	     area "Ostfold"
+88 "as-gw2"		 185.0	   48.0	     area "NLH as"
+89 "stavanger-gw4"	  30.0	   22.0	     area "Stavanger"
+90 "veths-gw"            173.0	   37.0	     area "Oslo"
+91 "bo-gw3"		  61.0     51.0      area "Telemark"
+92 "harstad-gw"		  55.0	  188.0	     area "Harstad" 
+93 "ifi2-gw"		 192.0	   60.0	     area "Oslo"
+94 "hamar-gw2"		 128.0	   90.0      area "Osterdalen"
+95 "hamar-gw3"		 138.0     86.0      area "Osterdalen"
+96 "bo-gw2"		  50.0	   51.0	     area "Telemark"
+97 "alta-gw"             145.0    187.0      area "Alta"
+98 "alta-gw2"            145.0    192.0      area "Alta"
+99 "kautokeino-gw"       160.0    188.0      area "Kautokeino"
+100 "karasjok-gw"        175.0    188.0      area "Karasjok"
+101 "kirkenes-gw"        190.0    192.0      area "Kirkenes"
+102 "hammerfest-gw"      160.0    195.0      area "Hammerfest"
+103 "elverum-gw1"        165.0     87.0      area "Osterdalen"
+105 "oslo-gw1"		 150.0	   60.00     area "Oslo"
+106 "narvik-gw1"	 159.0	  176.0	     area "Narvik"
+107 "alta-gw3"		 135.0	  190.0	     area "Alta"
+108 "steinkjer-gw2"       73.0    153.0      area "Trondheim"
+109 "forde-gw2"           58.0     94.0      area "Forde/Volda"
+110 "levanger-gw3"        95.0    153.0      area "Trondheim"
+*Arcs
+2  94   5  l "gjovik-hamar"			    c 10000000
+2  38   1  l "gjovik-gw1.gjovik-gw"		    c 1000000
+3   5  15  l "stolav-hovedbygget"                   c 10000000
+3  35  10  l "stolav-pil32"			    c 10000000
+3  36  55  l "stolav-sogndal"			    c 10000000
+3  40  19  l "stolav-hoytek"			    c 10000000
+3  56  10  l "stolav-drammen"                       c 10000000
+3  66   5  l "stolav-gw2.stolav-gw4"                c 10000000
+3  77  25  l "stolav-kongsvinger"                   c 1000000
+3  91   5  l "stolav-bo"			    c 10000000
+3  93   5  l "stolav-gw2.ifi2-gw-1"		    c 10000000
+3  93   5  l "stolav-gw2.ifi2-gw-2"		    c 10000000
+3  94  30  l "stolav-hamar"			    c 10000000
+3 105   5  l "stolav-gw2.oslo-gw1-1"                c 10000000
+3 105   5  l "stolav-gw2.oslo-gw1-2"                c 10000000
+6 105  15  l "trd-oslo"                             c 10000000
+4   6   1  l "trd-gw1.trd-gw2"			    c 10000000
+4  24   1  l "trd-gw1.trd-gw7"                      c 10000000
+5   3  15  l "hovedbygget-stolav"                   c 10000000
+5  25   5  l "hovedbygget1-trd"                     c 10000000
+5  40  20  l "hovedbygget-hoytek"                   c 10000000
+5  23   1  l "hovedbygget-gw1.hovedbygget-gw4"      c 10000000
+5  72  20  l "hovedbygget-kristiansund"             c 1000000
+5  83  20  l "hovedbygget-narvik"		    c 10000000
+5 108  20  l "hovedbygget-steinkjer"                c 10000000
+7  51   1  l "haugesund-gw2.haugesund-gw"	    c 1000000
+7  89   9  l "haugesund-stavanger"		    c 10000000
+6   4   1  l "trd-gw2.trd-gw1"			    c 10000000
+6  24   1  l "trd-gw2.trd-gw7"			    c 10000000
+6  25   1  l "trd-gw2.trd-gw"			    c 10000000
+6  62  24  l "trd-mo"				    c 10000000
+9  10   2  l "ma2-gw.tromso-gw2"                    c 10000000
+9  55   1  l "ma2-gw.tromso-gw7"                    c 1000000
+9  102 10  l "tromso-hammerfest"		    c 1000000
+9  106  6  l "tromso-narvik2"			    c 10000000
+10 25  28  l "tromso-trd"                           c 10000000
+10  9   2  l "tromso-gw2.ma2-gw"                    c 10000000
+10 14  10  l "tromso-harstad10"			    c 10000000
+10 54   1  l "tromso2-tromso4"                      c 1000000
+10 59  10  l "tromso-harstad"                       c 2488000
+10 75  12  l "tromso-harstad2"                      c 1000000
+10 107 10  l "tromso-alta"                          c 10000000
+11 71   1  l "molde-gw.molde-gw2"		    c 1000000
+12 67  30  l "ifi2-gw2.oslo-gw4"		    c 10000000
+13  93 19  l "bergen-oslo"                          c 10000000
+12 93  30  l "ifi2-gw2.ifi2-gw"			    c 10000000
+13 16   1  l "bergen-gw2.bergen-gw7"		    c 10000000
+13 36  40  l "bergen-sogndal"                       c 10000000
+13 40   1  l "bergen-hoytek"			    c 10000000
+14 59   3  l "harstad-gw1.harstad-gw3"		    c 1000000
+14 75   3  l "harstad-gw1.harstad-gw2"		    c 1000000
+14 70  10  l "harstad-bodo2"			    c 10000000
+14 10  10  l "harstad-tromso10"			    c 10000000
+14 92   1  l "harstad-gw1.harstad-gw"		    c 10000000
+14 106 10  l "harstad-narvik"			    c 10000000
+15 58	1  l "grimstad-gw2.grimstad-gw1"	    c 10000000
+15 64  10  l "grimstad-porsgrunn2"		    c 10000000
+16 13   1  l "bergen-gw7.bergen-gw2"		    c 10000000
+16 17   2  l "bergen-hoytek2"                       c 1000000
+16 81  10  l "bergen-haukeland"                     c 1000000
+16 80  12  l "bergen-stavanger"		            c 10000000
+17 16   2  l "hoytek-bergen2"                       c 1000000
+17 18  10  l "hoytek-gw4.hoytek-gw3"                c 1000000
+17 40  10  l "hoytek-gw4.hoytek-gw2"		    c 1000000
+17 61  25  l "hoytek-stord"                         c 1000000
+17 82  11  l "hoytek-haukeland"                     c 1000000
+18 40  10  l "hoytek-gw3.hoytek-gw2"                c 1000000
+18 17  10  l "hoytek-gw3.hoytek-gw4"                c 1000000
+19 20  20  l "alesund-volda"                        c 10000000
+19 50   1  l "alesund-gw1.alesund-gw"               c 10000000
+19 78  17  l "alesund-teknobyen"		    c 10000000
+20 19  20  l "volda-alesund"                        c 10000000
+20 52   1  l "volda-gw1.volda-gw3"		    c 10000000
+21 22  10  l "forde-sogndal"                        c 1000000
+21 109  1  l "forde-gw2.forde-gw"		    c 1000000
+22 21  10  l "sogndal-forde"                        c 1000000
+22 36   1  l "sogndal-gw2.sogndal-gw"               c 1000000
+23  5   1  l "hovedbygget-gw4.hovedbygget-gw1"      c 10000000
+23 24   5  l "hovedbygget4-trd7"                    c 10000000
+23 31  32  l "hovedbygget-lillehammer"		    c 10000000
+23 73   5  l "hovedbygget-teknobyen"		    c 10000000
+24  4   1  l "trd-gw7.trd-gw1"                      c 10000000
+24 23   5  l "trd7-hovedbygget4"                    c 10000000
+24  6   1  l "trd-gw7.trd-gw2"                      c 10000000
+24 25   5  l "trd-gw7.trd-gw"			    c 1000000
+25  5   5  l "trd-hovedbygget1"                     c 10000000
+25 10  28  l "trd-tromso"                           c 10000000
+25 26  19  l "trd-stjordal"                         c 1000000
+25  6   1  l "trd-gw.trd-gw2"			    c 10000000
+25 24   5  l "trd-gw.trd-gw7"			    c 1000000
+25 76  40  l "trd-sandnessjoen"                     c 1000000
+25 78   4  l "trd-teknobyen"                        c 10000000
+25 105 10  l "trd-oslo-100"			    c 100000000
+26 25  19  l "stjordal-trd"                         c 1000000
+26 27  19  l "stjordal-levanger"                    c 1000000
+27 110  1  l "levanger-gw.levanger-gw3"		    c 1000000
+27 26  19  l "levanger-stjordal"                    c 1000000
+28 30  20  l "steinkjer-namsos"                     c 1000000
+28 108  1  l "steinkjer-gw.steinkjer-gw2"	    c 1000000
+29 44   1  l "kristiansand-gw2.kristiansand-gw1"    c 10000000
+29 89  10  l "kristiansand-stavanger"               c 10000000
+29 96  20  l "kristiansand-bo"			    c 10000000
+30 28  20  l "namsos-steinkjer"                     c 1000000
+30 62  54  l "namsos-mo"                            c 1000000
+31 23  32  l "lillehammer-hovedbygget"		    c 10000000
+31 37   1  l "lillehammer-gw2.lillehammer-gw"       c 1000000
+31 95  10  l "lillehammer-hamar2"		    c 10000000
+33 73  60  l "evenstad-teknobyen"                   c 1000000
+33 34  10  l "evenstad-rena"                        c 1000000
+34 33  10  l "rena-evenstad"                        c 1000000
+34 103 10  l "rena-elverum"                         c 1000000
+35  3  10  l "pil32-stolav"			    c 10000000
+35 42   1  l "pil32-pil50"			    c 10000000
+36  3  55  l "sogndal-stolav"			    c 10000000
+36 13  40  l "sogndal-bergen"                       c 10000000
+36 22   1  l "sogndal-gw.sogndal-gw2"               c 1000000
+37 38  20  l "lillehammer-gjovik"                   c 1000000
+37 94  15  l "lillehammer-hamar"		    c 1000000
+37 31  1   l "lillehammer-gw.lillehammer-gw2"       c 1000000
+38 105 45  l "gjovik-oslo"                          c 1000000
+38  2   1  l "gjovik-gw.gjovik-gw1"		    c 1000000
+38 37  20  l "gjovik-lillehammer"                   c 1000000
+39 32  25  l "as-fredrikstad"                       c 1000000
+39 88	1  l "as-gw.as-gw2"			    c 1000000
+32 39  25  l "fredrikstad-as"                       c 1000000
+32 43  10  l "fredrikstad-borre"		    c 10000000
+32 57   1  l "fredrikstad-gw3.fredrikstad-gw2"	    c 10000000
+40  3  19  l "hoytek-stolav"			    c 10000000
+40  5  20  l "hoytek-hovedbygget"                   c 10000000
+40 13   1  l "hoytek-bergen"			    c 10000000
+40 17  10  l "hoytek-gw2.hoytek-gw4"		    c 1000000
+40 18  10  l "hoytek-gw2.hoytek-gw3"                c 1000000
+40 50  10  l "hoytek-alesund"                       c 10000000
+40 109 40  l "hoytek-forde"			    c 10000000
+41 95  15  l "elverum-hamar"                        c 1000000
+41 103  1  l "elverum-gw2.elverum-gw1"		    c 1000000
+41 77  20  l "elverum-kongsvinger"	 	    c 1000000
+41 103  1  l "elverum-gw2.elverum-gw1"		    c 1000000
+42 35   1  l "pil50-pil32"			    c 10000000
+42 90  10  l "pil50-veths"			    c 10000000
+43 32  10  l "borre-fredrikstad"		    c 10000000
+43 53  10  l "borre-larvik"			    c 10000000
+43 56  24  l "borre-drammen"                        c 10000000
+44 29   1  l "kristiansand-gw1.kristiansand-gw2"    c 10000000
+44 58	5  l "kristiansand-grimstad"		    c 10000000
+44 105 18  l "kristiansand-oslo"		    c 10000000
+45 56  10  l "kongsberg-drammen"                    c 1000000
+45 46  10  l "kongsberg-honefoss"                   c 1000000
+46 45  10  l "honefoss-kongsberg"                   c 1000000
+46 47  12  l "honefoss-kjeller"                     c 1000000
+47 46  12  l "kjeller-honefoss"                     c 1000000
+47 79   1  l "kjeller-gw3.kjeller-gw2"              c 1000000 
+49 53  30  l "porsgrunn-larvik"			    c 10000000
+49 64	1  l "porsgrunn-gw3.porsgrunn-gw2"	    c 10000000
+49 96  10  l "porsgrunn-bo"			    c 10000000
+50 40  10  l "alesund-hoytek"                       c 10000000
+50 11  10  l "alesund-molde"                        c 10000000
+50 19   1  l "alesund-gw.alesund-gw1"               c 10000000
+51  7   1  l "haugesund-gw.haugesund-gw2"	    c 1000000
+51 61  20  l "haugesund-stord"                      c 1000000
+52 20   1  l "volda-gw3.volda-gw1"		    c 10000000
+52 109 10  l "volda-forde2"			    c 10000000
+53 43  10  l "larvik-borre"			    c 10000000
+53 49  30  l "larvik-porsgrunn"			    c 10000000
+54 10   1  l "tromso4-tromso2"                      c 1000000
+54 55   3  l "tromso4-tromso7"                      c 1000000
+55  9   1  l "tromso-gw7.ma2-gw"                    c 1000000
+55 54   3  l "tromso7-tromso4"                      c 1000000
+56  3  10  l "drammen-stolav"                       c 10000000
+56 43  24  l "drammen-borre"  			    c 10000000
+56 45  10  l "drammen-kongsberg"		    c 1000000
+57 32   1  l "fredrikstad-gw2.fredrikstad-gw3"	    c 10000000
+57 86  15  l "fredrikstad-halden2"		    c 10000000
+58 15   1  l "grimstad-gw1.grimstad-gw2"	    c 10000000
+58 44   5  l "grimstad-kristiansand" 		    c 10000000  	
+59 10  10  l "harstad-tromso"                       c 2488000
+59 14   3  l "harstad-gw3.harstad-gw1"		    c 1000000
+59 60  10  l "harstad-svalbard"                     c 1000000
+59 75   1  l "harstad-gw3.harstad-gw2"              c 2488000
+60 59  10  l "svalbard-harstad"                     c 1000000
+61 17  25  l "stord-hoytek"                         c 1000000
+61 51  20  l "stord-haugesund"                      c 1000000
+62 30  54  l "mo-namsos"                            c 1000000
+62  6  24  l "mo-trd"                               c 10000000
+62 63   1  l "mo-gw3.mo-gw4"                        c 10000000
+62 65  25  l "mo-nesna"				    c 1000000
+63 62   1  l "mo-gw4.mo-gw3"                        c 10000000
+63 70  16  l "mo-bodo"                              c 10000000
+64 15  10  l "porsgrunn-grimstad2"                  c 10000000
+64 49   1  l "porsgrunn-gw2.porsgrunn-gw3"	    c 10000000
+65 62  25  l "nesna-mo"				    c 100000
+65 84  30  l "nesna-bodo"		  	    c 1000000
+65 76   4  l "nesna-sandnessjoen"                   c 1000000
+66  3   5  l "stolav-gw4.stolav-gw2"                c 10000000
+66 67  16  l "stolav-gw4.oslo-gw4"                  c 1000000
+66 68   6  l "stolav-gw4.oslo-gw7"                  c 10000000
+67 105  5  l "oslo-gw4.oslo-gw1"                    c 10000000
+67 12  30  l "oslo-gw4.ifi2-gw2"		    c 10000000
+67 93   5  l "oslo-gw4.ifi2-gw"                     c 10000000
+67 66  16  l "oslo-gw4.stolav-gw4"                  c 1000000
+67 68   4  l "oslo-gw4.oslo-gw7"                    c 10000000
+68 105  5  l "oslo-gw7.oslo-gw1"                    c 10000000
+68 66   6  l "oslo-gw7.stolav-gw4"                  c 10000000
+68 67   4  l "oslo-gw7.oslo-gw4"                    c 10000000
+68 93   5  l "oslo-gw7.ifi2-gw"			    c 10000000
+70 14  10  l "bodo-harstad2"			    c 10000000
+70 63  16  l "bodo-mo"				    c 10000000
+70 84	1  l "bodo-gw.bodo-gw1"			    c 1000000
+71 11   1  l "molde-gw2.molde-gw"		    c 1000000
+71 72  10  l "molde-kristiansund"                   c 1000000
+11 50  10  l "molde-alesund"                        c 10000000
+72  5  20  l "kristiansund-hovedbygget"             c 1000000
+72 71  10  l "kristiansund-molde"                   c 1000000
+73 23   5  l "teknobyen-hovedbygget"		    c 10000000
+73 33  60  l "teknobyen-evenstad"                   c 1000000
+73 78   1  l "teknobyen-gw2.teknobyen-gw1"          c 10000000
+74 75  10  l "bodo-harstad"                         c 2488000
+74 84   1  l "bodo-gw2.bodo-gw1"                    c 1000000
+75 10  12  l "harstad-tromso2"			    c 1000000
+75 14   3  l "harstad-gw2.harstad-gw1"		    c 1000000
+75 59   1  l "harstad-gw2.harstad-gw3"              c 2488000
+75 74  10  l "harstad-bodo"                         c 2488000
+76 25  40  l "sandnessjoen-trd"                     c 1000000
+76 65   4  l "sandnessjoen-nesna"                   c 1000000
+77  3  25  l "kongsvinger-stolav"                   c 1000000
+77 41  20  l "kongsvinger-elverum"                  c 1000000
+78 19  17  l "teknobyen-alesund"                    c 10000000
+78 25   4  l "teknobyen-trd"                        c 10000000
+78 73   1  l "teknobyen-gw1.teknobyen-gw2"          c 10000000
+79 105 10  l "kjeller-oslo"                         c 1000000
+79 47   1  l "kjeller-gw2.kjeller-gw3"              c 1000000
+80 16  12  l "stavanger-bergen"			    c 10000000	
+80 89   1  l "stavanger-gw1.stavanger-gw4"	    c 10000000
+81 16  10  l "haukeland-bergen"                     c 1000000
+81 82   1  l "haukeland-haukeland2"                 c 1000000
+82 81   1  l "haukeland2-haukeland"                 c 1000000
+82 17  11  l "haukeland-hoytek"                     c 1000000
+83 105 60  l "narvik-oslo"			    c 10000000
+83  5  20  l "narvik-hovedbygget"		    c 10000000
+83 84  40  l "narvik-bodo"                          c 1000000
+83 106  1  l "narvik-gw3.narvik-gw1"		    c 10000000
+84 65  30  l "bodo-nesna"                           c 1000000
+84 70   1  l "bodo-gw1.bodo-gw"			    c 1000000
+84 74   1  l "bodo-gw1.bodo-gw2"                    c 1000000
+84 83  40  l "bodo-narvik"			    c 1000000
+86 87   1  l "halden-gw.halden-gw3"		    c 10000000
+86 57  15  l "halden-fredrikstad2"		    c 10000000
+87 86   1  l "halden-gw3.halden-gw"		    c 10000000
+87 93  25  l "halden-oslo"			    c 10000000
+88 39	1  l "as-gw2.as-gw"			    c 1000000
+88 105 30  l "as-oslo"				    c 10000000
+89  7   9  l "stavanger-haugesund"		    c 10000000
+89 80   1  l "stavanger-gw4.stavanger-gw1"	    c 10000000
+89 29  10  l "stavanger-kristiansand"               c 10000000
+90 42  10  l "veths-pil50"			    c 10000000
+90 105 18  l "veths-oslo"			    c 10000000
+91  96  1  l "bo-gw3.bo-gw2-2"			    c 10000000
+91 105 30  l "bo-oslo"                              c 1000000
+91  3   5  l "bo-stolav"			    c 10000000
+92  14  1  l "harstad-gw.harstad-gw1"		    c 10000000
+93 105  1  l "ifi2-gw.oslo-gw1-1"		    c 10000000
+93 105  1  l "ifi2-gw.oslo-gw1-2"		    c 10000000
+93  3   5  l "ifi2-gw.stolav-gw2-1"		    c 10000000
+93  3   5  l "ifi2-gw.stolav-gw2-2"		    c 10000000
+93 12  30  l "ifi2-gw.ifi2-gw2"			    c 10000000
+93 13  19  l "oslo-bergen"                          c 10000000
+93 68   5  l "ifi2-gw.oslo-gw7"			    c 10000000
+93 67   5  l "ifi2-gw.oslo-gw4"			    c 10000000
+93 87  25  l "oslo-halden"			    c 10000000
+94  2   5  l "hamar-gjovik"			    c 10000000
+94  3  30  l "hamar-stolav"			    c 10000000
+95 31  10  l "hamar-lillehammer2"		    c 10000000
+94 95   1  l "hamar-gw2.hamar-gw3"		    c 10000000
+94 37  15  l "hamar-lillehammer"		    c 1000000
+94 103 15  l "hamar-elverum2"			    c 10000000
+95 41  16  l "hamar-elverum"                        c 1000000
+95 94   1  l "hamar-gw3.hamar-gw2"		    c 10000000
+96 29  20  l "bo-kristiansand"			    c 10000000
+96 49  10  l "bo-porsgrunn"			    c 10000000
+96 91   1  l "bo-gw2.bo-gw3-2"			    c 10000000
+97 98   1  l "alta-gw.alta-gw2"			    c 1000000
+97 99  10  l "alta-kautokeino"			    c 1000000
+97 107  1  l "alta-gw.alta-gw3"			    c 1000000
+98 97   1  l "alta-gw2.alta-gw"			    c 1000000
+98 102 10  l "alta-hammerfest"			    c 1000000
+98 107  1  l "alta-gw2.alta-gw3"	    	    c 1000000
+99 97  10  l "kautokeino-alta"			    c 1000000
+99 100 10  l "kautokeino-karasjok"		    c 1000000
+100 99 10  l "karasjok-kautokeino"		    c 1000000
+100 101 20 l "karasjok-kirkenes"		    c 1000000
+101 100 20 l "kirkenes-karasjok"		    c 1000000
+101 102 10 l "kirkenes-hammerfest"    		    c 1000000
+102 101 10 l "hammerfes-kirkenes"		    c 1000000
+102   9 10 l "hammerfest-tromso"		    c 1000000
+102  98 10 l "alta-hammerfest"			    c 1000000
+103  94 15 l "elverum-hamar2"			    c 10000000
+103  41  1 l "elverum-gw1.elverum-gw2"		    c 1000000
+103  34 10 l "elverum-rena"                         c 1000000
+105   3  5 l "oslo-gw1.stolav-gw2-1"                c 10000000
+105   3  5 l "oslo-gw1.stolav-gw2-2"                c 10000000
+105   6 15 l "oslo-trd"                             c 10000000
+105  38 45 l "oslo-gjovik"                          c 1000000
+105  44 18 l "oslo-kristiansand"		    c 10000000
+105  67  5 l "oslo-gw1.oslo-gw4"                    c 10000000
+105  68  5 l "oslo-gw1.oslo-gw7"                    c 10000000
+105  79 10 l "oslo-kjeller"                         c 1000000
+105  83 60 l "oslo-narvik"			    c 10000000
+105  88 30 l "oslo-as"				    c 10000000
+105  90 18 l "oslo-veths"			    c 10000000
+105  91 30 l "oslo-bo"                              c 1000000
+105  93  1 l "oslo-gw1.ifi2-gw-1"		    c 10000000
+105  93  1 l "oslo-gw1.ifi2-gw-2"		    c 10000000
+105  25 10 l "oslo-trd-100"			    c 100000000
+106   9  6 l "narvik-tromso2"			    c 10000000
+106  14 10 l "narvik-harstad"			    c 10000000
+106  83  1 l "narvik-gw1.narvik-gw3"		    c 10000000
+107  10 10 l "alta-tromso"                          c 10000000
+107  97  1 l "alta-gw3.alta-gw"			    c 1000000
+107  98  1 l "alta-gw3.alta-gw2"		    c 1000000
+108  5  20 l "steinkjer-hovedbygget"                c 10000000
+108  28  1 l "steinkjer-gw2.steinkjer-gw"	    c 1000000
+108 110 10 l "steinkjer-levanger"		    c 10000000
+109  21  1 l "forde-gw2.forde-gw"		    c 1000000
+109  40 40 l "forde-hoytek"			    c 10000000
+109  52 10 l "forde-volda2"			    c 10000000
+110  27  1 l "levanger-gw3.levanger-gw"		    c 1000000
+110 108 10 l "levanger-steinkjer"		    c 10000000
