@@ -23,7 +23,7 @@ from mininet.topo import Topo
 class uniTopo (Topo):
 
     
-    def __init__( self, path='/home/gulzi/mininet/custom/isis-uninett.net' ):
+    def __init__( self, path='/home/gulzi/mininet/custom/mininet-exploration/isis-uninett.net' ):
         "Create Topology"
     
         # Initialize topology
