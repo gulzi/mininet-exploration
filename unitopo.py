@@ -1,30 +1,15 @@
-"""
-Read graphs in Pajek format.
 
-See http://vlado.fmf.uni-lj.si/pub/networks/pajek/doc/draweps.htm
-for format information.
+__author__ = """hafiz muhammad gulzar hmgulzar88@gmail.com"""
 
-This implementation handles only directed and undirected graphs including
-those with self loops and parallel edges.  
-
-Adapted by Morten Knutsen (morten.knutsen@uninett.no).
-"""
-__author__ = """Aric Hagberg (hagberg@lanl.gov)"""
-#    Copyright (C) 2008 by 
-#    Aric Hagberg <hagberg@lanl.gov>
-#    Dan Schult <dschult@colgate.edu>
-#    Pieter Swart <swart@lanl.gov>
-#    Distributed under the terms of the GNU Lesser General Public License
-#    http://www.gnu.org/copyleft/lesser.html
-import networkx,mininet.topo 
+import networkx,mininet.topo,os 
 from networkx.utils import is_string_like
 from mininet.topo import Topo
-
+from mininet.link import TCLink
 class uniTopo (Topo):
 
     
-    def __init__( self, path='/home/gulzi/mininet/custom/mininet-exploration/isis-uninett.net' ):
-        "Create Topology"
+    def __init__( self, path=os.getcwd()+'/isis-uninett.net' ):
+        "Creates uninett  Topology into mininet"
     
         # Initialize topology
         Topo.__init__( self )
@@ -66,9 +51,11 @@ class uniTopo (Topo):
                         id,label,x,y=splitline[0:4]                
                         extras={'id':id,'x':x,'y':y}
 			attr.update(extras)
+		    
+                   # print s1,h1
                     s1 = self.addSwitch('s'+id,**attr)
                     h1 = self.addHost('h'+id)
-                    self.addLink(h1,s1)
+                    self.addLink(h1,s1,bw=100)
                     #extra_attr=zip(splitline[4::2],splitline[5::2])
                     #print extra_attr
                     #G.node_attr[label].update(extra_attr)
@@ -86,7 +73,9 @@ class uniTopo (Topo):
                     extra_attr=zip(splitline[3::2],splitline[4::2])
                     link_opts.update(extra_attr)
                     cap = int(splitline[6])
-                    self.addLink(u,v)    
+                    self.addLink(u,v,bw=cap)    
 
+        
+          		
+topos = { 'unitopo': ( lambda: uniTopo() ) }
 
-topos = { 'mytopo': ( lambda: uniTopo() ) }
