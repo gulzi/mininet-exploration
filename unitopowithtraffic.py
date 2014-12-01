@@ -13,13 +13,16 @@ from mininet.cli import CLI
 from time import sleep, time
 from multiprocessing import Process
 from subprocess import Popen
+from mininet.log import setLogLevel
 import random
 from functools import partial
 import argparse
 import sys
 import os
 import signal
+import httplib
 
+links_descr = {}
 class uniTopo (Topo):
     scale = 10000
     
@@ -78,23 +81,56 @@ class uniTopo (Topo):
                     ui,vi,w=splitline[0:3]
                     u=nodelabels.get(ui,ui)
                     v=nodelabels.get(vi,vi)
+		    link_label = splitline[4]
+		    #print link_descr
                     link_opts={'value':float(w)}
                     extra_attr=zip(splitline[3::2],splitline[4::2])
                     link_opts.update(extra_attr)
                     cap = int(splitline[6])
 		    scaledCap = cap/self.scale
-		    a = self.addLink(v,u,bw=1000)
+		    addedLink = self.addLink(v,u,bw=scaledCap)
+		    links_descr[link_label] = addedLink
+		    #print links_descr[link_label]	
+		   
 
         
           		
-topos = { 'unitopo': ( lambda: uniTopo() ) }
+#topos = { 'unitopo': ( lambda: uniTopo() ) }
+
+def loadTraffic(host,url,net):
+	conn = httplib.HTTPConnection(host)
+	conn.request("GET",url)
+	r1 = conn.getresponse()
+	if r1.status !=200:
+		conn.close()
+		return {}
+	data1 = r1.read()
+	if not data1:
+		conn.close()
+		return {}
+	conn.close()
+
+	loads_by_descr = {}
+	retloads = {}
+	for line in data1.split('\n'):
+		if not line: continue
+		tokens = line.split()
+		descr = tokens[0].strip()
+		avgIn = tokens[3].strip()
+		avgOut = tokens[4].strip()
+		if links_descr.has_key(descr):
+			host1,host2 = links_descr[descr]
+			h1,h2 = net.get(host1,host2)			
+			net.iperf((h1,h2),l4Type='UDP',udpBw=avgOut)
+			net.iperf((h2,h1),l4Type='UDP',udpBw=avgIn)
 
 def startMininetTopo():
 	topo = uniTopo()
 	net = Mininet(topo=topo, link=TCLink,build=True)
 	net.start()
-	net.startTerms()
-	print ("background process")
+	#net.startTerms()
+	print "background process"
+	loadTraffic('drift.uninett.no','/nett/ip-nett/load-now',net)
 	CLI(net)
 	net.stop()
 
@@ -103,4 +139,5 @@ def main():
 	return
 
 if __name__ == '__main__':
+	setLogLevel('info')
 	main()
