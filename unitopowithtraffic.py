@@ -5,6 +5,21 @@ import networkx,mininet.topo,os
 from networkx.utils import is_string_like
 from mininet.topo import Topo
 from mininet.link import TCLink
+from mininet.net import Mininet
+from mininet.log import lg, output
+from mininet.node import Host, Controller
+from mininet.util import irange, custom, quietRun, dumpNetConnections
+from mininet.cli import CLI
+from time import sleep, time
+from multiprocessing import Process
+from subprocess import Popen
+import random
+from functools import partial
+import argparse
+import sys
+import os
+import signal
+
 class uniTopo (Topo):
     scale = 10000
     
@@ -68,10 +83,24 @@ class uniTopo (Topo):
                     link_opts.update(extra_attr)
                     cap = int(splitline[6])
 		    scaledCap = cap/self.scale
-		    a = self.addLink(v,u,bw=scaledCap)
-		    print a    
+		    a = self.addLink(v,u,bw=1000)
 
         
           		
 topos = { 'unitopo': ( lambda: uniTopo() ) }
 
+def startMininetTopo():
+	topo = uniTopo()
+	net = Mininet(topo=topo, link=TCLink,build=True)
+	net.start()
+	net.startTerms()
+	print ("background process")
+	CLI(net)
+	net.stop()
+
+def main():
+	startMininetTopo()
+	return
+
+if __name__ == '__main__':
+	main()
