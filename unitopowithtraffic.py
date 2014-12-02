@@ -10,21 +10,15 @@ from mininet.log import lg, output
 from mininet.node import Host, Controller, RemoteController
 from mininet.util import irange, custom, quietRun, dumpNetConnections
 from mininet.cli import CLI
-from time import sleep, time
-from multiprocessing import Process
-from subprocess import Popen
 from mininet.log import setLogLevel
-import random
 from functools import partial
 import argparse
 import sys
-import os
-import signal
 import httplib
 
 links_descr = {}
 class uniTopo (Topo):
-    scale = 10000
+    scale = 100000
     
     def __init__( self, path=os.getcwd()+'/isis-uninett.net' ):
         "Creates uninett  Topology into mininet"
@@ -62,35 +56,41 @@ class uniTopo (Topo):
                     splitline=shlex.split(l)                    
                     id, label = splitline[0:2]                  
                     nodelabels[id]='s'+id		
-                    attr={'id':id}                
-                    if len(splitline) > 2:
-                        id,label,x,y=splitline[0:4]                
-                        extras={'id':id,'x':x,'y':y}
-			attr.update(extras)
+                    #attr={'id':id}                
+                    #if len(splitline) > 2:
+                        #id,label,x,y=splitline[0:4]                
+                        #extras={'id':id,'x':x,'y':y}
+			#attr.update(extras)
 		                
-                    s1 = self.addSwitch('s'+id,**attr)                    
+                    s1 = self.addSwitch('s'+id)                    
 		    h1 = self.addHost('h'+id)
-                    self.addLink(h1,s1,bw=100)
+                    self.addLink(s1,h1,bw=100)
                     l = lines.next()
                     l = l.lower()
             if l.startswith("*arcs"):
+		linkExist = {}
                 for l in lines:
-                    if not l: break
-                    if l.startswith('#'): continue
-                    splitline=shlex.split(l)
-                    ui,vi,w=splitline[0:3]
-                    u=nodelabels.get(ui,ui)
-                    v=nodelabels.get(vi,vi)
-		    link_label = splitline[4]
-		    #print link_descr
-                    link_opts={'value':float(w)}
-                    extra_attr=zip(splitline[3::2],splitline[4::2])
-                    link_opts.update(extra_attr)
-                    cap = int(splitline[6])
-		    scaledCap = cap/self.scale
-		    addedLink = self.addLink(v,u,bw=scaledCap)
-		    links_descr[link_label] = addedLink
-		    #print links_descr[link_label]	
+                	if not l: break
+	                if l.startswith('#'): continue
+        	        splitline=shlex.split(l)
+                	ui,vi,w=splitline[0:3]
+	                u=nodelabels.get(ui)
+        	        v=nodelabels.get(vi)
+			link_label = splitline[4]
+			#print link_descr
+                    	#link_opts={'value':float(w)}
+	 	        #extra_attr=zip(splitline[3::2],splitline[4::2])
+                	#link_opts.update(extra_attr)
+	                cap = int(splitline[6])
+	 		scaledCap = cap/self.scale
+			if linkExist.has_key((v,u))==1:
+				print linkExist[(v,u)]
+				continue
+			else:
+				addedLink = self.addLink(u,v,bw=scaledCap)				  	  						
+	 			links_descr[link_label] = addedLink
+				linkExist[(v,u)]=1
+				
 		   
 
         
@@ -126,18 +126,15 @@ def loadTraffic(host,url,net):
 
 def startMininetTopo():
 	topo = uniTopo()
-	net = Mininet(topo=topo, link=TCLink,controller=partial (RemoteController, ip='10.0.2.15'))
+	net = Mininet(topo=topo, link=TCLink)#,controller=lambda (RemoteController, ip='152.94.0.235'))
 	net.start()
 	#net.startTerms()
 	print "background process"
-	loadTraffic('drift.uninett.no','/nett/ip-nett/load-now',net)
+	#loadTraffic('drift.uninett.no','/nett/ip-nett/load-now',net)
 	CLI(net)
 	net.stop()
-
-def main():
-	startMininetTopo()
-	return
-
+	
 if __name__ == '__main__':
 	setLogLevel('info')
-	main()
+	startMininetTopo()
+	

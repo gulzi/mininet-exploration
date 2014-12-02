@@ -13,12 +13,28 @@ class uniTopo (Topo):
     
         # Initialize topology
         Topo.__init__( self )
-	fh=open(path,mode='r')
-	lines = fh.readlines()
-        import shlex
-        if is_string_like(lines): lines=iter(lines.split('\n'))
-        lines = iter([line.rstrip('\n') for line in lines])
-        while lines:
+	#fh=open(path,mode='r')
+	#lines = fh.readlines()
+       # import shlex
+        #if is_string_like(lines): lines=iter(lines.split('\n'))
+        #lines = iter([line.rstrip('\n') for line in lines])
+	
+	
+	s2 = self.addSwitch('s2')
+	s5 = self.addSwitch('s5')
+	s6 = self.addSwitch('s6')
+	s7 = self.addSwitch('s7')
+	h2 = self.addHost('h2')
+	s94 = self.addSwitch('s94')
+	h94 = self.addHost('h94')
+	self.addLink(h2,s5)
+	self.addLink(h94,s94)
+	self.addLink(s2,s94)
+	self.addLink(s5,s94)
+	self.addLink(s2,s5)
+	self.addLink(s5,s7)
+	self.addLink(s7,s94)
+        """ while lines:
             try:
                 l=lines.next()
                 l=l.lower()
@@ -56,7 +72,10 @@ class uniTopo (Topo):
                     self.addLink(h1,s1)
                     l = lines.next()
                     l = l.lower()
+	
+
             if l.startswith("*arcs"):
+		self.addLink(s2,s94)
                 for l in lines:
                     if not l: break
                     if l.startswith('#'): continue
@@ -69,12 +88,10 @@ class uniTopo (Topo):
                     link_opts.update(extra_attr)
                     cap = int(splitline[6])
 		    scaledCap = cap/self.scale
-		    if self.isSwitch(u):
-			if self.isSwitch(v):
-				a = self.addLink(v,u)
-		        
+		    a = self.addLink(v,u)
+		    print a    """
 
-        
+       
           		
 topos = { 'unitopo': ( lambda: uniTopo() ) }
 
