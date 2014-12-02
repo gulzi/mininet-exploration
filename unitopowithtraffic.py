@@ -7,7 +7,7 @@ from mininet.topo import Topo
 from mininet.link import TCLink
 from mininet.net import Mininet
 from mininet.log import lg, output
-from mininet.node import Host, Controller
+from mininet.node import Host, Controller, RemoteController
 from mininet.util import irange, custom, quietRun, dumpNetConnections
 from mininet.cli import CLI
 from time import sleep, time
@@ -126,7 +126,7 @@ def loadTraffic(host,url,net):
 
 def startMininetTopo():
 	topo = uniTopo()
-	net = Mininet(topo=topo, link=TCLink,build=True)
+	net = Mininet(topo=topo, link=TCLink,controller=partial (RemoteController, ip='10.0.2.15'))
 	net.start()
 	#net.startTerms()
 	print "background process"
