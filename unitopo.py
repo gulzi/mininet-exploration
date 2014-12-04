@@ -42,17 +42,17 @@ class uniTopo (Topo):
                         l = l.lower()
                         continue
                     splitline=shlex.split(l)                    
-                    id, label = splitline[0:2]
+                    idz, label = splitline[0:2]
 		    print label                  
-                    nodelabels[id]='s'+id		
-                    attr={'id':id}                
-                    if len(splitline) > 2:
-                        id,label,x,y=splitline[0:4]                
-                        extras={'id':id,'x':x,'y':y}
-			attr.update(extras)
+                    nodelabels[idz]='s'+idz		
+                    #attr={'id':id}                
+                    #if len(splitline) > 2:
+                        #id,label,x,y=splitline[0:4]                
+                        #extras={'id':id,'x':x,'y':y}
+			#attr.update(extras)
 		                
-                    s1 = self.addSwitch('s'+id)                    
-		    h1 = self.addHost('h'+id)
+                    s1 = self.addSwitch('s'+idz)                    
+		    h1 = self.addHost('h'+idz)
                     self.addLink(h1,s1)
                     l = lines.next()
                     l = l.lower()
@@ -62,19 +62,21 @@ class uniTopo (Topo):
                     if l.startswith('#'): continue
                     splitline=shlex.split(l)
                     ui,vi,w=splitline[0:3]
-                    u=nodelabels.get(ui,ui)
-                    v=nodelabels.get(vi,vi)
+                    u=nodelabels.get(ui)
+                    v=nodelabels.get(vi)
                     link_opts={'value':float(w)}
                     extra_attr=zip(splitline[3::2],splitline[4::2])
                     link_opts.update(extra_attr)
                     cap = int(splitline[6])
 		    scaledCap = cap/self.scale
 		    if self.isSwitch(u):
+			print "yes"
 			if self.isSwitch(v):
-				a = self.addLink(v,u)
-		        
-
-        
+				print "again yes"
+				if v.connectionsTo(u):continue
+				else:
+					a = self.addLink(v,u)
+	            
           		
 topos = { 'unitopo': ( lambda: uniTopo() ) }
 

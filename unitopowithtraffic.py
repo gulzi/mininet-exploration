@@ -30,6 +30,7 @@ class uniTopo (Topo):
         import shlex
         if is_string_like(lines): lines=iter(lines.split('\n'))
         lines = iter([line.rstrip('\n') for line in lines])
+	nodelabels={}
         while lines:
             try:
                 l=lines.next()
@@ -42,7 +43,7 @@ class uniTopo (Topo):
                 label,name=l.split()
                 toponame=name
             if l.startswith("*vertices"):
-                nodelabels={}
+                #nodelabels={}
                 l,nnodes=l.split()
                 while not l.startswith("*arcs"):
                     if l.startswith('#'):
@@ -54,17 +55,18 @@ class uniTopo (Topo):
                         l = l.lower()
                         continue
                     splitline=shlex.split(l)                    
-                    id, label = splitline[0:2]                  
-                    nodelabels[id]='s'+id		
+                    ids, label = splitline[0:2]
+		    #print ids                  
+                    #nodelabels[id]='s'+id		
                     #attr={'id':id}                
                     #if len(splitline) > 2:
                         #id,label,x,y=splitline[0:4]                
                         #extras={'id':id,'x':x,'y':y}
 			#attr.update(extras)
 		                
-                    s1 = self.addSwitch('s'+id)                    
-		    h1 = self.addHost('h'+id)
-                    self.addLink(s1,h1,bw=100)
+                    nodelabels[ids] = self.addSwitch('s'+ids)
+		    h1 = self.addHost('h'+ids)
+                    self.addLink(h1,nodelabels[ids],bw=100)
                     l = lines.next()
                     l = l.lower()
             if l.startswith("*arcs"):
@@ -76,6 +78,7 @@ class uniTopo (Topo):
                 	ui,vi,w=splitline[0:3]
 	                u=nodelabels.get(ui)
         	        v=nodelabels.get(vi)
+			print u,v
 			link_label = splitline[4]
 			#print link_descr
                     	#link_opts={'value':float(w)}
@@ -84,12 +87,15 @@ class uniTopo (Topo):
 	                cap = int(splitline[6])
 	 		scaledCap = cap/self.scale
 			if linkExist.has_key((v,u))==1:
-				print linkExist[(v,u)]
 				continue
+			elif linkExist.has_key((u,v))==1:							continue
 			else:
-				addedLink = self.addLink(u,v,bw=scaledCap)				  	  						
-	 			links_descr[link_label] = addedLink
-				linkExist[(v,u)]=1
+				if self.isSwitch(u):
+					if self.isSwitch(v):
+						addedLink = self.addLink(u,v,bw=scaledCap)				  	  						
+			 			links_descr[link_label] = addedLink
+						linkExist[(v,u)]=1
+						linkExist[(u,v)]=1
 				
 		   
 
@@ -126,7 +132,7 @@ def loadTraffic(host,url,net):
 
 def startMininetTopo():
 	topo = uniTopo()
-	net = Mininet(topo=topo, link=TCLink)#,controller=lambda (RemoteController, ip='152.94.0.235'))
+	net = Mininet(topo=topo, link=TCLink,controller=partial (RemoteController, ip='192.168.0.119'))
 	net.start()
 	#net.startTerms()
 	print "background process"
