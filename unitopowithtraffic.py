@@ -64,7 +64,7 @@ class uniTopo (Topo):
                         #extras={'id':id,'x':x,'y':y}
 			#attr.update(extras)
 		                
-                    nodelabels[ids] = self.addSwitch('s'+ids)
+                    nodelabels[ids] = self.addSwitch('sdfsdf.sdfew-fsd')
 		    h1 = self.addHost('h'+ids)
                     self.addLink(h1,nodelabels[ids],bw=100)
                     l = lines.next()
@@ -125,8 +125,11 @@ def loadTraffic(host,url,net):
 		avgIn = tokens[3].strip()
 		avgOut = tokens[4].strip()
 		if links_descr.has_key(descr):
-			host1,host2 = links_descr[descr]
+			s1,s2 = links_descr[descr]
+			host1 = s1.replace("s","h")
+			host2 = s2.replace("s","h")
 			h1,h2 = net.get(host1,host2)			
+			#print h1, h2
 			net.iperf((h1,h2),l4Type='UDP',udpBw=avgOut)
 			net.iperf((h2,h1),l4Type='UDP',udpBw=avgIn)
 
@@ -134,9 +137,7 @@ def startMininetTopo():
 	topo = uniTopo()
 	net = Mininet(topo=topo, link=TCLink,controller=partial (RemoteController, ip='192.168.0.119'))
 	net.start()
-	#net.startTerms()
-	print "background process"
-	#loadTraffic('drift.uninett.no','/nett/ip-nett/load-now',net)
+	loadTraffic('drift.uninett.no','/nett/ip-nett/load-now',net)
 	CLI(net)
 	net.stop()
 	
